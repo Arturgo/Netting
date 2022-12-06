@@ -1,0 +1,3 @@
+For next time :
+- Iterative rounding (with LP solver, and bad complexity)
+- Optimal IP with Gurobi
