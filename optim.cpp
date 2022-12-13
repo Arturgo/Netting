@@ -12,6 +12,9 @@ int main() {
 	cin.tie(NULL);
 	cout.tie(NULL);
 	
+	ofstream fout;
+	fout.open("out.txt");
+	
 	GRBEnv env;
 	env.set(GRB_IntParam_LogToConsole, 0);
 	GRBModel model = GRBModel(env);
@@ -51,7 +54,8 @@ int main() {
 	
 	model.optimize();
 	
-	cout << -model.get(GRB_DoubleAttr_ObjVal) << " " << upperThroughput << endl;
+	//cout << -model.get(GRB_DoubleAttr_ObjVal) << endl;/*<< " " << upperThroughput << endl;*/
+	fout << -model.get(GRB_DoubleAttr_ObjVal) << endl;
 	
 	return 0;
 }
